@@ -1131,8 +1131,9 @@ function streamCodebuddySdk(model: Model<any>, context: Context, options?: Simpl
 			} else {
 				debug(`WARNING: tool result without toolCallId, cannot match`);
 			}
-			if (resultCtx.pendingToolCalls.size > 0 && resultCtx.pendingResults.size > 0) {
-				debug(`BUG: both maps non-empty! handlers=${resultCtx.pendingToolCalls.size} results=${resultCtx.pendingResults.size}`);
+			const overlappingIds = [...resultCtx.pendingToolCalls.keys()].filter((pendingId) => resultCtx.pendingResults.has(pendingId));
+			if (overlappingIds.length > 0) {
+				debug(`BUG: tool-call IDs in both maps: ${overlappingIds.join(",")}`);
 			}
 		}
 		const waitingHandlers = resultCtx.pendingToolCalls.size + resultCtx.unboundToolHandlers.length;
