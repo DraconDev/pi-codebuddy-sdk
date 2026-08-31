@@ -1,0 +1,23 @@
+node_modules/
+.DS_Store
+*.log
+
+# Secrets and local env (never commit)
+.env
+.env.*
+!.env.test.example
+
+# Test and local artifacts (may contain session metadata — never commit)
+.test-output/
+.plans/
+coverage/
+dist/
+*.tsbuildinfo
+
+# CodeBuddy CLI debug captures (under ~/.pi/agent/ when DEBUG=1)
+cb-cli-logs/
+**/*.ndjson
+
+# Editor
+.idea/
+.vscode/
