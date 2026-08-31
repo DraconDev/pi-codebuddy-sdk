@@ -1,9 +1,12 @@
 {
-  "name": "pi-codebuddy-sdk",
+  "name": "@dracondev/pi-codebuddy-sdk",
   "version": "0.4.5",
   "description": "Pi CodeBuddy provider with hy4-preview/max support and race-free MCP tool bridging.",
   "author": "DraconDev",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "repository": {
     "type": "git",

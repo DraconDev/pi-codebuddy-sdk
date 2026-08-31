@@ -12,16 +12,23 @@ Pi extension that registers **CodeBuddy** as a model provider. You keep using Pi
 
 ## Install
 
-This maintained fork is installed directly from GitHub:
+This maintained fork is published on npm and can also be installed directly
+from GitHub:
 
 ```bash
-# If the npm package is already installed, replace it first.
+# If the upstream npm package is already installed, replace it first.
 pi remove npm:pi-codebuddy-sdk
+pi install npm:@dracondev/pi-codebuddy-sdk
+```
+
+GitHub alternative:
+
+```bash
 pi install git:github.com/DraconDev/pi-codebuddy-sdk@main
 ```
 
 Restart `pi` if it was already running. For a temporary test, use
-`pi -e git:github.com/DraconDev/pi-codebuddy-sdk`.
+`pi -e npm:@dracondev/pi-codebuddy-sdk`.
 
 ## Requirements
 
@@ -32,7 +39,7 @@ Restart `pi` if it was already running. For a temporary test, use
 
 No `codebuddy-sdk.json` and no plugin-specific env vars are required.
 
-1. `pi install git:github.com/DraconDev/pi-codebuddy-sdk@main`
+1. `pi install npm:@dracondev/pi-codebuddy-sdk`
 2. Restart `pi`
 3. `/model` → pick `codebuddy/...`
 
